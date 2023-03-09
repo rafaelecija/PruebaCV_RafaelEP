@@ -8,14 +8,19 @@ namespace PruebaCV_RafaelEP
 {
     internal class modelo
     {
-        private string _nombre;
+        private const int NOMBRE_MIN = 2;
 
+        private const int EDAD_MIN = 18;
+
+        private string _nombre;
+        private int _Edad;
         public string Nombre
         {
             get { return _nombre; }
 
             set
             {
+                
                 bool estaOK;
 
                 estaOK = true;
@@ -25,7 +30,23 @@ namespace PruebaCV_RafaelEP
                     estaOK=false;
                 }
                 _nombre=value;
+
+            }
+
+        }
+        public int Edad
+        {
+            get { return _Edad; }
+            set
+            {
+                int edad=0;
+                bool estaOK = true;
+                if(edad<EDAD_MIN)
+                {
+                    estaOK = false;
+                }
             }
         }
+
     }
 }
